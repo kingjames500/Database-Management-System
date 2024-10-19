@@ -68,3 +68,21 @@ ON Customers.customer_id = Orders.customer_id;
 ![right join statement results](./images/left%20join%20images.png)
 
 ### 3. Full join.
+
+The SQL ***FULL JOIN*** statement joins two tables based on a common column. It selects records that have matching values in these columns and the remaining rows from both of the tables.
+
+```sql
+-- full join Customers and Orders tables
+-- based on their shared customer_id columns
+-- Customers is the left table
+-- Orders is the right table
+
+SELECT customer.id, customer.first_name, customer.last_name, Orders.order_date
+FROM customer
+FULL OUTER JOIN Orders
+ON customer.id = Orders.customer_id;
+```
+![full join statement results](./images/full%20join.png)
+
+Here, the SQL query performs a <b>FULL JOIN</b> on two tables, <i>customers</i> and <i>Orders</i>. This means that the result set contains all the rows from both tables, including the ones that don't have common customer_id values.
+
